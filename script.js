@@ -48,26 +48,42 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("active");
 }
 
-// --- MODAL INTERATIVO (VER INTERIOR/DETALHES) ---
-function openInteractiveModal(title, exteriorUrl, interiorUrl, motorUrl, bateriaUrl) {
-    document.getElementById('modalTitle').innerText = title + " - Experiência Imersiva";
+// --- MODAL INTERATIVO & LEITOR 360° ---
+let viewer360 = null;
+
+function openInteractiveModal(title, exteriorUrl, panoramaUrl, motorUrl, bateriaUrl) {
+    document.getElementById('modalTitle').innerText = title + " - Experiência Imersiva 360°";
     document.getElementById('imgExterior').src = exteriorUrl;
-    document.getElementById('imgInterior').src = interiorUrl;
     document.getElementById('imgMotor').src = motorUrl;
     document.getElementById('imgBateria').src = bateriaUrl;
     
     let modal = document.getElementById('interactiveModal');
     modal.style.display = 'flex';
     modal.setAttribute('aria-hidden', 'false');
+
+    if (viewer360) {
+        viewer360.destroy();
+    }
+
+    viewer360 = pannellum.viewer('panorama-360', {
+        "type": "equirectangular",
+        "panorama": panoramaUrl,
+        "autoLoad": true,
+        "compass": false
+    });
 }
 
 function closeModal() {
     let modal = document.getElementById('interactiveModal');
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
+    
+    if (viewer360) {
+        viewer360.destroy();
+        viewer360 = null;
+    }
 }
 
-// Fechar o modal ao clicar fora da área interna
 window.onclick = function(event) {
     let modal = document.getElementById('interactiveModal');
     if (event.target == modal) {
