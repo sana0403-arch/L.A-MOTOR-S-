@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L.A MOTOR'S | Excelência em Mobilidade Elétrica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DE ACESSIBILIDADE PCD -->
+    <div class="accessibility-bar" aria-label="Ferramentas de Acessibilidade">
+        <div>
+            <span><strong>Acessibilidade:</strong></span>
+            <button class="access-btn" onclick="changeFontSize(1)" aria-label="Aumentar Fonte">A+</button>
+            <button class="access-btn" onclick="changeFontSize(-1)" aria-label="Diminuir Fonte">A-</button>
+            <button class="access-btn" onclick="toggleDarkMode()" aria-label="Alternar Modo Claro e Escuro">Contraste / Modo</button>
+        </div>
+        <div>
+            <button class="access-btn" onclick="readPageText()" aria-label="Ouvir Texto da Página">🔊 Ouvir Página</button>
+            <button class="access-btn" onclick="stopAudio()" aria-label="Parar Áudio">⏹ Parar Áudio</button>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">L.A MOTOR'S</div>
+        <nav>
+            <a href="#empresa">A Empresa</a>
+            <a href="#processo">Processo de Criação</a>
+            <a href="#veiculos">Modelos</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>O Futuro da Mobilidade É Elétrico e Acessível</h1>
+        <p>Projetamos veículos de alta performance com emissão zero, combinando tecnologia de ponta, segurança máxima e design arrojado.</p>
+    </section>
+
+    <!-- EXCELÊNCIA E PROFISSIONALISMO -->
+    <section id="empresa" class="about-section">
+        <h2>Excelência e Profissionalismo: L.A MOTOR'S</h2>
+        <p>Na <strong>L.A MOTOR'S</strong>, nossa jornada é pautada pelo rigor técnico e pela busca incessante da perfeição automobilística. Nosso compromisso é entregar veículos elétricos que superem os mais altos padrões internacionais de qualidade e segurança.</p>
+        <br>
+        <p>Trabalhamos com uma equipe multidisciplinar de engenheiros renomados e designers inovadores. O profissionalismo da L.A MOTOR'S é refletido no atendimento personalizado, no suporte pós-venda completo e na transparência em todas as etapas da experiência do cliente.</p>
+    </section>
+
+    <!-- PROCESSO DE CRIAÇÃO DO CARRO -->
+    <section id="processo" class="process-section">
+        <h2>Processo Completo de Criação: Da Ideia ao Mercado</h2>
+        <p>Descubra em detalhes como um veículo elétrico da L.A MOTOR'S é concebido:</p>
+        <br>
+
+        <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" onclick="openTab(event, 'etapa1')" role="tab">1. Design & Aerodinâmica</button>
+            <button class="tab-btn" onclick="openTab(event, 'etapa2')" role="tab">2. Engenharia Elétrica</button>
+            <button class="tab-btn" onclick="openTab(event, 'etapa3')" role="tab">3. Montagem & Automação</button>
+            <button class="tab-btn" onclick="openTab(event, 'etapa4')" role="tab">4. Testes & Vendas</button>
+        </div>
+
+        <div id="etapa1" class="tab-content active" role="tabpanel">
+            <h3>Etapa 1: Design Conceitual e Eficiência Aerodinâmica</h3>
+            <p>Tudo começa com esboços digitais e modelagens 3D. Nossos designers focam em criar linhas sofisticadas que reduzem o coeficiente de arrasto aerodinâmico (Cx). Menos resistência do ar significa que a bateria dura mais quilômetros por carga. Simulações em túneis de vento virtuais garantem que cada curva do chassi otimize o fluxo de ar, os faróis de LED de alta eficiência e o painel interno digital.</p>
+        </div>
+
+        <div id="etapa2" class="tab-content" role="tabpanel">
+            <h3>Etapa 2: Engenharia do Motor Elétrico e Baterias</h3>
+            <p>O coração do carro elétrico. Desenvolvemos o inversor de frequência, o motor elétrico trifásico de ímã permanente e o pacote de baterias de íons de lítio montado diretamente na base do chassi (arquitetura skateboard). Essa distribuição garante um centro de gravidade baixo, melhorando a estabilidade e a curva de segurança. O sistema de refrigeração líquida garante que o motor opere na temperatura ideal.</p>
+        </div>
+
+        <div id="etapa3" class="tab-content" role="tabpanel">
+            <h3>Etapa 3: Montagem Robotizada e Acabamento do Painel</h3>
+            <p>Na fábrica automatizada, robôs de precisão unem a estrutura de alumínio e aço de alta resistência. Em seguida, instala-se o chicote elétrico de alta voltagem (identificado na cor laranja) e o painel multimídia interativo. Cada componente do interior é revisado manualmente para garantir ergonomia, materiais sustentáveis no estofamento e integração perfeita dos controles digitais.</p>
+        </div>
+
+        <div id="etapa4" class="tab-content" role="tabpanel">
+            <h3>Etapa 4: Testes Rigorosos, Homologação e Concessionárias</h3>
+            <p>Antes de chegar às lojas, o veículo passa por crash-tests, testes de estanqueidade contra água, carregamento ultrarrápido em redes DC e auditoria de software. Somente após a aprovação de 100% dos checklists de segurança é que o carro é enviado para os showrooms da L.A MOTOR'S para ser vendido com garantia de até 8 anos para o sistema elétrico.</p>
+        </div>
+    </section>
+
+    <!-- SHOWROOM DE CARROS -->
+    <section id="veiculos" class="showroom">
+        <h2>Nossa Linha de Veículos Elétricos</h2>
+        <div class="car-grid">
+            
+            <!-- CARRO 1 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Vista exterior do Carro Elétrico L.A E-Sedan Prata">
+                <div class="car-info">
+                    <h3>L.A E-Sedan Luxo</h3>
+                    <p>Autonomia de 550 km. Aceleração de 0 a 100 km/h em 3.5 segundos. Acabamento em prata metálico e bege interno.</p>
+                    <button class="btn-interact" onclick="openInteractiveModal('L.A E-Sedan Luxo', 
+                        'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1558441719-670b95752a02?auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80')">🔍 Entrar no Veículo e Detalhes</button>
+                </div>
+            </div>
+
+            <!-- CARRO 2 -->
+            <div class="car-card">
+                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80" alt="Vista exterior do SUV Elétrico L.A E-SUV Titan Preto">
+                <div class="car-info">
+                    <h3>L.A E-SUV Titan</h3>
+                    <p>Espaço para a família, tração integral AWD e painel com telas duplas panorâmicas digitais.</p>
+                    <button class="btn-interact" onclick="openInteractiveModal('L.A E-SUV Titan', 
+                        'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1558441719-670b95752a02?auto=format&fit=crop&w=800&q=80',
+                        'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80')">🔍 Entrar no Veículo e Detalhes</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL INTERATIVO -->
+    <div id="interactiveModal" class="modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Visão Detalhada do Veículo</h2>
+            <p>Explore as fotos e detalhes técnicos dos componentes do modelo selecionado:</p>
+            
+            <div class="interactive-view">
+                <div class="view-box">
+                    <h4>Vista Externa e Faróis Matrix LED</h4>
+                    <img id="imgExterior" src="" alt="Vista Exterior e Faróis">
+                    <p><small>Faróis com acendimento automático e iluminação direcionável.</small></p>
+                </div>
+                <div class="view-box">
+                    <h4>Interior e Painel Digital</h4>
+                    <img id="imgInterior" src="" alt="Vista do Painel e Interior do Carro">
+                    <p><small>Cockpit com volante multifuncional e sistema de bordo multimídia.</small></p>
+                </div>
+                <div class="view-box">
+                    <h4>Motor Elétrico Trifásico</h4>
+                    <img id="imgMotor" src="" alt="Engenharia do Motor Elétrico">
+                    <p><small>Motor compacto de alta eficiência sem emissão de ruído.</small></p>
+                </div>
+                <div class="view-box">
+                    <h4>Bateria e Componentes Elétricos</h4>
+                    <img id="imgBateria" src="" alt="Módulo de Baterias e Cabos de Alta Voltagem">
+                    <p><small>Sistema de gerenciamento térmico das células elétricas.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 L.A MOTOR'S - Todos os direitos reservados. Mobilidade Sustentável e Acessibilidade Universal.</p>
+    </footer>
+
+    <!-- WIDGET VLIBRAS -->
+    <div plugin-vlibras>
+        <div top-wrapper class="accessible-slider"></div>
+        <div class="vw-plugin-wrapper">
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
