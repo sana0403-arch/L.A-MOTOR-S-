@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L.A MOTOR'S | Excelência em Mobilidade Elétrica</title>
+    <!-- CDN Pannellum para Tour 360° -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,6 +32,7 @@
             <a href="#empresa">A Empresa</a>
             <a href="#processo">Processo de Criação</a>
             <a href="#veiculos">Modelos</a>
+            <a href="#valores">Tabela de Preços</a>
         </nav>
     </header>
 
@@ -93,9 +97,9 @@
                     <p>Autonomia de 550 km. Aceleração de 0 a 100 km/h em 3.5 segundos. Acabamento em prata metálico e bege interno.</p>
                     <button class="btn-interact" onclick="openInteractiveModal('L.A E-Sedan Luxo', 
                         'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
-                        'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+                        'https://pannellum.org/images/alma.jpg',
                         'https://images.unsplash.com/photo-1558441719-670b95752a02?auto=format&fit=crop&w=800&q=80',
-                        'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80')">🔍 Entrar no Veículo e Detalhes</button>
+                        'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80')">🔍 Entrar no Veículo 360° e Detalhes</button>
                 </div>
             </div>
 
@@ -107,42 +111,80 @@
                     <p>Espaço para a família, tração integral AWD e painel com telas duplas panorâmicas digitais.</p>
                     <button class="btn-interact" onclick="openInteractiveModal('L.A E-SUV Titan', 
                         'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
-                        'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
+                        'https://pannellum.org/images/cerro-toco-0.jpg',
                         'https://images.unsplash.com/photo-1558441719-670b95752a02?auto=format&fit=crop&w=800&q=80',
-                        'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80')">🔍 Entrar no Veículo e Detalhes</button>
+                        'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80')">🔍 Entrar no Veículo 360° e Detalhes</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- MODAL INTERATIVO -->
+    <!-- TABELA DE VALORES -->
+    <section id="valores" class="price-section">
+        <h2>Valores e Especificações Técnicas</h2>
+        <div class="table-responsive">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Autonomia</th>
+                        <th>Bateria / Potência</th>
+                        <th>Carga Rápida (10-80%)</th>
+                        <th>Preço Estimado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>L.A E-Sedan Luxo</strong></td>
+                        <td>550 km</td>
+                        <td>85 kWh / 450 cv</td>
+                        <td>20 min</td>
+                        <td>R$ 380.000,00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>L.A E-SUV Titan</strong></td>
+                        <td>480 km</td>
+                        <td>100 kWh / 520 cv</td>
+                        <td>25 min</td>
+                        <td>R$ 450.000,00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>L.A E-Sport Coupe</strong></td>
+                        <td>510 km</td>
+                        <td>90 kWh / 600 cv</td>
+                        <td>18 min</td>
+                        <td>R$ 520.000,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- MODAL INTERATIVO COM 360° -->
     <div id="interactiveModal" class="modal" aria-hidden="true" role="dialog">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">Visão Detalhada do Veículo</h2>
-            <p>Explore as fotos e detalhes técnicos dos componentes do modelo selecionado:</p>
+            <p>Arraste o mouse sobre a imagem abaixo para girar a câmera em 360° no interior do veículo:</p>
             
+            <div class="view-box 360-container">
+                <h4>Interior Interativo 360°</h4>
+                <div id="panorama-360"></div>
+            </div>
+
             <div class="interactive-view">
                 <div class="view-box">
                     <h4>Vista Externa e Faróis Matrix LED</h4>
                     <img id="imgExterior" src="" alt="Vista Exterior e Faróis">
-                    <p><small>Faróis com acendimento automático e iluminação direcionável.</small></p>
-                </div>
-                <div class="view-box">
-                    <h4>Interior e Painel Digital</h4>
-                    <img id="imgInterior" src="" alt="Vista do Painel e Interior do Carro">
-                    <p><small>Cockpit com volante multifuncional e sistema de bordo multimídia.</small></p>
                 </div>
                 <div class="view-box">
                     <h4>Motor Elétrico Trifásico</h4>
                     <img id="imgMotor" src="" alt="Engenharia do Motor Elétrico">
-                    <p><small>Motor compacto de alta eficiência sem emissão de ruído.</small></p>
                 </div>
                 <div class="view-box">
                     <h4>Bateria e Componentes Elétricos</h4>
                     <img id="imgBateria" src="" alt="Módulo de Baterias e Cabos de Alta Voltagem">
-                    <p><small>Sistema de gerenciamento térmico das células elétricas.</small></p>
                 </div>
             </div>
         </div>
